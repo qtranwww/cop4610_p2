@@ -134,3 +134,53 @@ void free_all_pets(void)
 	for (i = 0; i < NUM_FLOORS; i++)
 		free_list(&elevator.floors[i]);
 }
+
+
+enum elevator_state elevator_next_move(void) {
+    int i;
+    bool require_above = false;
+    bool require_below = false;
+    
+    struct list_head *ptr;
+    struct pet *temp_pet;
+
+    for (ptr = elevator.car.next; ptr != &elevator.car; ptr = ptr->next) {
+        
+        temp_pet = list_entry(ptr, struct pet, node);
+
+        if (temp_pet->dest > elevator.floor) {
+            require_above = true;
+        } else if (temp_pet->dest < elevator.floor) {
+            require_below = true;
+        }
+    }
+
+    if (elevator.stopping == false) {
+        for (i = MIN_FLOOR; i <= MAX_FLOOR; i++) {
+            struct list_head *head = floor_queue(i);
+
+            if (head->next != head) {
+                if (i > elevator.floor) {
+                    require_above = true;
+                } else if (i < elevator.floor) {
+                    require_below = true;
+                }
+            }
+        }
+    }
+
+    if (elevator.state == ELEVATOR_UP) {
+        if (require_above == true) return ELEVATOR_UP;
+        if (require_below == true) return ELEVATOR_DOWN;
+    } 
+    else if (elevator.state == ELEVATOR_DOWN) {
+        if (require_below == true) return ELEVATOR_DOWN;
+        if (require_above == true) return ELEVATOR_UP;
+    } 
+    else {
+        if (require_above == true) return ELEVATOR_UP;
+        if (require_below == true) return ELEVATOR_DOWN;
+    }
+
+    return ELEVATOR_IDLE;
+}

@@ -24,7 +24,7 @@ enum pet_type {
 	PET_PUG,
 	PET_PUGHUAHUA,
 	PET_DACHSHUND,
-	NUM_PET_TYPES,
+	// NUM_PET_TYPES
 };
 
 struct pet_info {
