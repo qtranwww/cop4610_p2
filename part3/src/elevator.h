@@ -80,5 +80,7 @@ void free_all_pets(void);
  * while elevator.stopping is set.
  */
 enum elevator_state elevator_next_move(void);
+int elevator_proc_init(void);
+void elevator_proc_exit(void);
 
 #endif
