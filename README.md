@@ -3,42 +3,34 @@
 [Description]
 
 ## Group Members
-- **John Doe**: jd19@fsu.edu
-- **Jane Smith**: js19@fsu.edu
-- **Alex Brown**: ab19@fsu.edu
+- Quan Tran: qt24b@fsu.edu
+- Ty Officer: tro23@fsu.edu
+- Alexander Turner: ajt22@fsu.edu
 ## Division of Labor
 
 ### Part 1: System Call Tracing
-- **Responsibilities**: [Description]
-- **Assigned to**: John Doe
+- **Assigned to**: Quan, Ty
 
 ### Part 2: Timer Kernel Module
-- **Responsibilities**: [Description]
-- **Assigned to**: Jane Smith
+- **Assigned to**: Quan, Ty
 
 ### Part 3a: Adding System Calls
-- **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown
+- **Assigned to**: Quan, Ty
 
 ### Part 3b: Kernel Compilation
-- **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown, Jane Smith
+- **Assigned to**: Quan, Ty
 
 ### Part 3c: Threads
-- **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown, Jane Smith
+- **Assigned to**: Ty, Alex
 
 ### Part 3d: Linked List
-- **Responsibilities**: [Description]
-- **Assigned to**: Jane Smith
+- **Assigned to**: Ty, Alex
 
 ### Part 3e: Mutexes
-- **Responsibilities**: [Description]
-- **Assigned to**: John Doe
+- **Assigned to**: Alex, Quan
 
 ### Part 3f: Scheduling Algorithm
-- **Responsibilities**: [Description]
-- **Assigned to**: Alex Brown, John Doe
+- **Assigned to**: Alex, Quan
 
 ## File Listing
 ```
@@ -52,21 +44,33 @@ elevator/
 │   └── Makefile
 ├── part2/
 │   ├── src/
+│   │   ├── my_timer.c
+│   │   └── Makefile
 │   └── Makefile
 ├── part3/
 │   ├── src/
+│   │   ├── elevator.h
+│   │   ├── modules.c
+│   │   ├── pets.c
+│   │   ├── proc.c
+│   │   └── thread.c
 │   ├── tests/
-│   ├── Makefile
-│   └── sys_call.c
+│   ├── syscalls/
+│   │   ├── syscalls.c
+│   │   └── Makefile
+│   └── Makefile
 ├── Makefile
 └── README.md
 
 ```
-# How to Compile & Execute
+# How to:
 
-### Requirements
-- **Compiler**: e.g., `gcc` for C/C++, `rustc` for Rust.
-- **Dependencies**: List any libraries or frameworks necessary (rust only).
+### Compile:
+
+### Get the folders from ssh:
+- `scp -r [name]@linprog.cs.fsu.edu:~[path-to-directory-in-ssh] ~[path-in-the-VM]` then enter password
+- **Example**: `scp -r qtran@linprog.cs.fsu.edu:~/COP4610/Project2/code_space_p2/part3 ~/cop4610_p2/part3/`
+
 
 ## Part 1
 
