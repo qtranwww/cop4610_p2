@@ -4,6 +4,8 @@ all: syscheck.ko test-syscalls
 
 run:
 	./test-syscalls
+	./test-syscalls
+
 
 test_syscalls: test-syscalls.c test-syscalls.h
 	gcc test-syscalls -o test_syscalls
