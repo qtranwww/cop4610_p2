@@ -1,5 +1,6 @@
 obj-m += elevator.o
 elevator-objs := src/module.o src/pets.o src/thread.o src/proc.o
+PWD := $(CURDIR)
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules

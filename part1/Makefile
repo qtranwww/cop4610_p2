@@ -4,7 +4,9 @@ CFLAGS := -std=c11 -Wall -Wextra -O0
 PROGRAMS := empty part1
 TRACES := empty.trace part1.trace
 
-.PHONY: all traces clean
+.PHONY: default all traces clean
+
+default: traces
 
 all: $(PROGRAMS)
 
